@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1 #{title}
+  form(method='POST', action='/movies/delete/'+movie[0].movie_id)
+    #form-group
+      label ID:
+      input.form-control(name='id', type='text',readonly='', value=movie[0].movie_id)
+    #form-group
+      label Title:
+      input.form-control(name='title', type='text',readonly='',value=movie[0].name)
+    #form-group
+      label Theatre:
+      input.form-control(name='theatre',type='text',readonly='',value=movie[0].theatre)
+    br
+    input.btn.btn-danger(type='submit',value='Delete')
+  

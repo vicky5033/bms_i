@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+    .container
+        ul.nav.nav-pills.nav-fill
+            li.nav-item
+                h3
+                    a(data-toggle='tab', href='#menu1') Movies   
+            li.nav-item
+                h3
+                    a(data-toggle='tab', href='#menu2') Events
+        .tab-content
+            #menu1.tab-pane.fade
+                h3 Menu 1 
+                p
+                    | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+            #menu2.tab-pane.fade
+                h3 Menu 2 
+                p
+                    | Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.

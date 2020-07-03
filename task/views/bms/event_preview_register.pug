@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+    #{even}   
+    form(method='GET', action='/events/register/'+id/'success')
+    table.table
+        
+        thead
+            tr 
+                th Description
+                th Details
+        
+        tbody
+            tr
+                td(scope='col') Event
+                td=event[0].name
+            tr
+                td(scope='col') Theatre
+                td=event[0].theatre
+            tr 
+                td(scope='col') Date Time
+                td=event[0].show_date+' '+event[0].show_time
+            tr
+                td(scope='col') Tickets
+                td=tickets
+            tr
+                td(scope='col') Each Cost
+                td=fair
+            tr 
+                td(scope='col') Total Fair
+                td=" ( "+tickets+"*"+fair+" ) "+total
+          
+    .form-group.row
+        h2.container(style='color:green')  Thank you for registering!!!
+

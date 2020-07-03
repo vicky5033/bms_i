@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  h1 #{title}
+  table.table.table-bordered 
+    thead
+        tr
+         th(scope='col') ID
+         th(scope='col') NAME   
+         th(scope='col') Theatre   
+    each item in items
+        tbody
+            tr
+             td 
+              a(href="/movies/edit/"+item.id, value=item.id)=item.id
+             td= item.name
+             td= item.theatre
+             td= 
+              
+  br
+  ul.nav
+    li.nav-item
+      a.nav-link(href='/movies/add') Add Movie
+      br
+    li.nav-item
+      a.nav-link(href='/movies/delete') Delete Movie
+  
+  

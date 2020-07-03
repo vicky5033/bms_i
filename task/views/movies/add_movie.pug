@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+  h1 #{title}
+  form(method='POST', action='/movies/add')
+    #form-group
+      label Title:
+      input.form-control(name='title', type='text')
+    #form-group
+      label Theatre:
+      input.form-control(name='theatre',type='text')
+      br
+    #form-group
+      label Show Date :
+      input.m-2#showdate(type='date', name='showdate')
+      label Show Time :
+      input.ml-2#showtime(type='time', name='showtime')
+    br
+    input.btn.btn-primary(type='submit',value='Submit')
+    

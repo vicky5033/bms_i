@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h1 Movie booking
+  each item in movies
+      .card(style='width: auto').bg-dark
+      .card-body.bg-light
+        .div
+          h5.card-title=item.name
+          h6.card-subtitle.mb-2.text-muted=item.theatre
+        a.card-link(href="/movies/register/"+item.movie_id, value=item) Register
+      br

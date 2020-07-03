@@ -1,0 +1,48 @@
+extends ../layout
+
+block content
+
+    form(method='POST', action='/movies/register/'+id)
+        .form-group.row
+            label.col-sm-2.col-form-label(for='movieRegister') Movie
+            .col-sm-10
+            input#inputEmail3.form-control(type='text', value=movie[0].name,readonly='')
+        .form-group.row
+            label.col-sm-2.col-form-label(for='text') Theatre
+            .col-sm-10
+            input#inputPassword3.form-control(type='text',value = movie[0].theatre ,readonly='')
+        .form-group.row
+            label.col-sm-2.col-form-label(for='text') Show DATE TIME
+            .col-sm-10
+            input#inputPassword3.form-control(type='text',value = movie[0].show_date +" "+ movie[0].show_time ,readonly='')
+        fieldset.form-group
+            .row
+            legend.col-form-label.col-sm-2.pt-0 Choose the section
+            .col-sm-10
+                .form-check
+                input#gridRadios1.form-check-input(type='radio', name='fair', value='200', checked='')
+                label.form-check-label(for='gridRadios1')
+                    | Gold class (200.Rs)
+                .form-check
+                input#gridRadios2.form-check-input(type='radio', name='fair', value='150')
+                label.form-check-label(for='gridRadios2')
+                    | Silver class (150.Rs)
+                .form-check.disabled
+                input#gridRadios3.form-check-input(type='radio', name='fair', value='100')
+                label.form-check-label(for='gridRadios3')
+                    | Basic  (100.Rs)
+        .form-group
+            label(for='exampleFormControlSelect1') No. Tickets
+            select#exampleFormControlSelect1.form-control(name='tickets')
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+        
+        .form-group.row
+            .col-sm-10
+    
+        button.btn.btn-primary.mr-2(type='submit',value='submit') Book
+    
+

@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  h1 #{title}  
+  each item in events
+      .card(style='width: auto').bg-dark
+      .card-body.bg-light
+        .div
+          h5.card-title=item.name
+          h6.card-subtitle.mb-2.text-muted=item.theatre
+        a.card-link(href="/events/edit/"+item.event_id, value=item) Edit
+        a.card-link(href='/events/delete/'+item.event_id, value=item) Delete
+      br
+
+
+              
+  
+  
