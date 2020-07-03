@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const passport = require('passport');
 const dbService = require("../dbService");
 const db = dbService.getDbServiceInstance();
 const Joi = require("@hapi/joi");
@@ -19,9 +18,6 @@ const connection = mysql.createConnection({
   password: "",
   database: "bms",
 });
-
-// Bring in User Model
-let User = require('../models/user');
 
 // Register Form
 router.get('/register', function(req, res){
@@ -115,13 +111,5 @@ router.get('/logout', function(req, res){
   req.flash('success', 'You are logged out');
   res.redirect('/users/login');
 });
-
-function validationUser(movie) {
-  const schema = Joi.object({
-    name: Joi.string().min(2).required(),
-    theemaiatre: Joi.string().min(2).required(),
-  });
-  return schema.validate(movie);
-}
 
 module.exports = router;
